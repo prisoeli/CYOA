@@ -1,0 +1,40 @@
+body{
+    text-align: center;
+    background-color: blanchedalmond;
+}
+#N6, #N15, #N9, #N8, #N12, #N13, #N10, #N11, #N14, #youDied,#N1, #N2, #N3, #N4, #N5, #N7, #N16{
+    display: none;
+}
+#N17{
+    display: none;
+}
+button{
+    height: 30px;
+
+}
+#youDied{
+    color: red;
+}
+#go{
+    margin-top: 50px;
+    margin-left: 350px;
+    height: 50px;
+    width:80px ;
+    border-radius: 20px;
+    background-color: lightcoral;
+}
+article{
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 30px;
+}
+#header{
+    font-family: 'Chelsea Market', cursive;
+    
+}
+#green{
+    text-shadow:3px 3px lightblue;
+
+}
+#ice{
+    text-shadow:3px 3px green;
+}
