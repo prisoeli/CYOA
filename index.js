@@ -10,24 +10,31 @@ $(document).ready(function(){
 $("#buttons").append(createButton("button1", tomato) + createButton("button2", swimsuit) 
 + createButton("button3", wildLifeLicense) + createButton("button4", planeTickets) );
 
-if($("#button1").click === tomato){
-    ketchup = true;
-
-}
-if($("#button3").click === wildLifeLicense){
-    license = true;
-
-}
+// if($("#button1").text() === tomato){
+//     ketchup = true;
+//     $("footer").text("You've got ketchup!");
+//     console.log(5);
+// }
+// if($("#button3").text() === wildLifeLicense){
+//     license = true;
+//     $("footer").text("You've got a license!");
+// }
 $("#go").click(function(){
     narrative("#N0","#N1");
     butt(iceland,greenland);
     hide("#button3","#button4");
     $("#go").hide();
+    $("footer").hide();
 })
 
 // buttons 1
 $("#button1").click(function(){
-
+    
+    if($("#button1").text() === tomato){
+        ketchup = true;
+        $("footer").text("You've got ketchup!");
+        console.log(5);
+    }
     if($("#button1").text()===iceland || $("#button1").text()===next){
         narrative("#N1","#N2");
         $("#N14").hide();
@@ -81,6 +88,9 @@ $("#button1").click(function(){
 
 // buttons 2
 $("#button2").click(function(){
+    if($("#button2").text() === swimsuit){
+        $("footer").text("You've got a swim suit.");
+    }
 
     if($("#button2").text() === greenland){
         narrative("#N1","#N6")
@@ -98,6 +108,7 @@ $("#button2").click(function(){
         $("#button1").hide();
         $("#button2").hide();
         butt(restart);
+        alert("Pickles are not good. Ew!")
     }
     else if($("#button2").text() === theStart){
         narrative("#N5","#N1");
@@ -116,7 +127,9 @@ $("#button2").click(function(){
     }
     else if($("#button2").text() === skinny){
         narrative("#N15","#youDied");
-        butt(restart,tryAgain);
+        butt(restart);
+        hide("#button2");
+        alert("Can't go skinny dipping in Greenland. Come on it's too cold.");
     }
     
      if($("#button2").text()===nuggets && ketchup === true){
@@ -124,14 +137,18 @@ $("#button2").click(function(){
         $("#button1").hide();
         $("#button2").hide();
     }
-    else{
-        $(alert).text("Nuggets without ketchup is nasty! It's not a debate");
+    if($("#button2").text()===nuggets && ketchup === false){
+        alert("You need ketchup. Nuggets without ketchup is nasty! It's not a debate");
     }
 
 })
 
 // buttons 3
 $("#button3").click(function(){
+    if($("#button3").text() === wildLifeLicense){
+        license = true;
+        $("footer").text("You've got a license!");
+    }
 
     if($("#button3").text() === vision){
         narrative("#N2","#N5");
@@ -148,15 +165,21 @@ $("#button3").click(function(){
         butt(next);
         hide("#button2","#button3");
     }
-
+    
 })
 
 // buttons 4
 $("#button4").click(function(){
+    if($("#button4").text() === planeTickets){
+        $("footer").text("You've got plane tickets");
+    }
 
-    if($("#button4").text() === polarBear){
+    if($("#button4").text() === polarBear && license === true){
         narrative("#N6","#N8");
         hide("#button1","#button2","#button3","#button4");
+    }
+    if($("#button4").text() === polarBear && license === false){
+        alert("You need a wild life license");
     }
 })
 
