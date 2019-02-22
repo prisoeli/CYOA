@@ -1,4 +1,5 @@
-body{
+.content{
+    margin:200px; 
     text-align: center;
     background-color: blanchedalmond;
 }
@@ -21,7 +22,7 @@ button{
     height: 50px;
     width:80px ;
     border-radius: 20px;
-    background-color: lightcoral;
+    background-color: #FF0800;
 }
 article{
     font-family: 'Reenie Beanie', cursive;
@@ -37,4 +38,23 @@ article{
 }
 #ice{
     text-shadow:3px 3px green;
+}
+#iceflag{
+    float: left;
+    width: 300px;
+    height: auto;
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg); 
+    transform: rotate(-20deg);
+}
+#greenflag{
+    float: right;
+    width: 300px;
+    height: auto;
+    -ms-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg); 
+    transform: rotate(20deg);
+}
+body{
+    background: linear-gradient(green,lightblue);
 }

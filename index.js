@@ -27,9 +27,11 @@ $("#go").click(function(){
     $("footer").hide();
 })
 
+
+
 // buttons 1
 $("#button1").click(function(){
-    
+    $("#button1").css("background-color", "red");
     if($("#button1").text() === tomato){
         ketchup = true;
         $("footer").text("You've got ketchup!");
@@ -88,6 +90,8 @@ $("#button1").click(function(){
 
 // buttons 2
 $("#button2").click(function(){
+    $("#button2").css("background-color", "yellow");
+
     if($("#button2").text() === swimsuit){
         $("footer").text("You've got a swim suit.");
     }
@@ -145,6 +149,8 @@ $("#button2").click(function(){
 
 // buttons 3
 $("#button3").click(function(){
+    $("#button3").css("background-color", "green");
+
     if($("#button3").text() === wildLifeLicense){
         license = true;
         $("footer").text("You've got a license!");
@@ -170,6 +176,8 @@ $("#button3").click(function(){
 
 // buttons 4
 $("#button4").click(function(){
+    $("#button4").css("background-color", "#00FFFF");
+
     if($("#button4").text() === planeTickets){
         $("footer").text("You've got plane tickets");
     }
@@ -177,6 +185,7 @@ $("#button4").click(function(){
     if($("#button4").text() === polarBear && license === true){
         narrative("#N6","#N8");
         hide("#button1","#button2","#button3","#button4");
+        butt(restart);
     }
     if($("#button4").text() === polarBear && license === false){
         alert("You need a wild life license");
@@ -221,8 +230,8 @@ var next = "NEXT"
 
 // hide and show function
 var narrative = function(a,b){
-    $(a).hide();
-    $(b).show();
+    $(a).fadeOut();
+    $(b).fadeIn();
 }
 // hide buttons after use
 var hide = function(a,b,c,d){
