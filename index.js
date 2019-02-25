@@ -1,7 +1,7 @@
 // booleans
 var ketchup = false;
 var license = false;
-
+var mySound;
 
 // code ran
 $(document).ready(function(){
@@ -25,6 +25,8 @@ $("#go").click(function(){
     hide("#button3","#button4");
     $("#go").hide();
     $("footer").hide();
+    $("#ketchup").hide();
+    $("#swimsuit").hide();
 })
 
 
@@ -35,7 +37,7 @@ $("#button1").click(function(){
     if($("#button1").text() === tomato){
         ketchup = true;
         $("footer").text("You've got ketchup!");
-        console.log(5);
+        $("#ketchup").fadeIn(2000);
     }
     if($("#button1").text()===iceland || $("#button1").text()===next){
         narrative("#N1","#N2");
@@ -50,9 +52,12 @@ $("#button1").click(function(){
         butt(pineapplePizza,nuggets);
     }
     else if($("#button1").text()===pineapplePizza){
+        // mySound.play();
         narrative("#N3","#youDied");
         hide("#button2");
         butt(restart);
+        $("#dead").fadeIn(3000);
+        alert("Pineapple is not right!");
     }
     else if($("#button1").text()===bfgf){
         narrative("#N4","#N7");
@@ -62,7 +67,9 @@ $("#button1").click(function(){
     else if($("#button1").text() === theEnd){
         narrative("#N5","#youDied");
         hide("#button1","#button2");
+        $("#dead").fadeIn(3000);
         butt(restart);
+        alert("Might as well die.");
     }
     else if($("#button1").text() === wife){
         narrative("#N6","#N15");
@@ -94,6 +101,7 @@ $("#button2").click(function(){
 
     if($("#button2").text() === swimsuit){
         $("footer").text("You've got a swim suit.");
+        $("#swimsuit").fadeIn(2000);
     }
 
     if($("#button2").text() === greenland){
@@ -113,6 +121,7 @@ $("#button2").click(function(){
         $("#button2").hide();
         butt(restart);
         alert("Pickles are not good. Ew!")
+        $("#dead").fadeIn(3000);
     }
     else if($("#button2").text() === theStart){
         narrative("#N5","#N1");
@@ -134,6 +143,7 @@ $("#button2").click(function(){
         butt(restart);
         hide("#button2");
         alert("Can't go skinny dipping in Greenland. Come on it's too cold.");
+        $("#dead").fadeIn(3000);
     }
     
      if($("#button2").text()===nuggets && ketchup === true){
@@ -184,8 +194,10 @@ $("#button4").click(function(){
 
     if($("#button4").text() === polarBear && license === true){
         narrative("#N6","#N8");
+        $("#youDied").fadeIn(2000);
         hide("#button1","#button2","#button3","#button4");
         butt(restart);
+        $("#dead").fadeIn(3000);
     }
     if($("#button4").text() === polarBear && license === false){
         alert("You need a wild life license");
@@ -253,4 +265,20 @@ var createButton = function(id, text){
 
     $("#buttons").append("<button id=" + id + ">" + text + "</button");
 
+}
+
+// sound
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
 }

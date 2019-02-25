@@ -58,3 +58,23 @@ article{
 body{
     background: linear-gradient(green,lightblue);
 }
+#ketchup{
+    margin-left: -400px;
+    width: 100px;
+    height: auto;
+    display: none;
+}
+#swimsuit{
+    margin-left: -400px;
+    width: 100px;
+    height: auto;
+    display: none;
+}
+#dead{
+    -ms-transform: rotate(-7deg);
+    -webkit-transform: rotate(-8deg); 
+    transform: rotate(-8deg);
+    width: 300px;
+    height: auto;
+    display: none;
+} 
