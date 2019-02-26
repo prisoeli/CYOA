@@ -10,15 +10,6 @@ $(document).ready(function(){
 $("#buttons").append(createButton("button1", tomato) + createButton("button2", swimsuit) 
 + createButton("button3", wildLifeLicense) + createButton("button4", planeTickets) );
 
-// if($("#button1").text() === tomato){
-//     ketchup = true;
-//     $("footer").text("You've got ketchup!");
-//     console.log(5);
-// }
-// if($("#button3").text() === wildLifeLicense){
-//     license = true;
-//     $("footer").text("You've got a license!");
-// }
 $("#go").click(function(){
     narrative("#N0","#N1");
     butt(iceland,greenland);
